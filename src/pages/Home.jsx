@@ -529,11 +529,11 @@ export default function Home() {
                                     <input type="number" name="age" value={20} readOnly />
                                     <textarea name="message" value="" readOnly></textarea>
                                 </div>
-                                <div className="space-y-2 md:col-span-2 mt-2">
-                                    <label className="text-xs uppercase tracking-widest text-brandRed font-bold">Selected Program</label>
-                                    <div className="w-full bg-zinc-950/50 border border-zinc-800 rounded-lg px-4 py-3 text-brandRed font-bold">
-                                        {formData.selectedCourse}
-                                    </div>
+                                <div className="space-y-2 md:col-span-2">
+                                    <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Select Program</label>
+                                    <select name="selectedCourse" value={formData.selectedCourse} onChange={handleInputChange} className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors appearance-none">
+                                        {courses.map(c => <option key={c.title} value={c.title}>{c.title}</option>)}
+                                    </select>
                                 </div>
                             </div>
 
