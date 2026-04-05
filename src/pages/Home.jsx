@@ -134,7 +134,7 @@ export default function Home() {
 
             {/* Hero Section */}
             <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 animate-fade-in"
-                style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+                style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1080&q=50)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
                 <div className="max-w-5xl mx-auto space-y-8 pt-20 animate-slide-up">
                     <span className="text-brandRed font-bold tracking-[0.2em] uppercase text-sm md:text-base animate-pulse">Welcome to Muzaffarnagar's Finest Academy</span>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white drop-shadow-2xl animate-zoom-in">
@@ -296,7 +296,7 @@ export default function Home() {
                                 <div className="p-8">
                                     <h3 className="text-2xl font-black uppercase mb-4">{course.title}</h3>
                                     <p className="text-gray-400 mb-8 min-h-[80px] leading-relaxed">{course.desc}</p>
-                                    <a href="#admission" className="inline-flex items-center justify-center w-full py-4 bg-zinc-800 group-hover:bg-brandRed text-white font-bold rounded-xl transition-colors">
+                                    <a href="#admission" onClick={() => setFormData(prev => ({ ...prev, selectedCourse: course.title }))} className="inline-flex items-center justify-center w-full py-4 bg-zinc-800 group-hover:bg-brandRed text-white font-bold rounded-xl transition-colors">
                                         Enroll Now <ChevronRight className="ml-2 w-5 h-5" />
                                     </a>
                                 </div>
@@ -516,28 +516,24 @@ export default function Home() {
                         <form onSubmit={handleAdmissionSubmit} className="space-y-6 relative z-10">
                             <h3 className="text-2xl font-black uppercase text-center mb-8 border-b border-zinc-800 pb-4">Admission Form</h3>
 
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="space-y-2 col-span-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Full Name</label>
                                     <input required type="text" name="name" value={formData.name} onChange={handleInputChange} minLength={3} maxLength={50} pattern="[A-Za-z\s]+" title="Please enter a valid name using alphabets" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors" placeholder="Enter Full Name" />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Age</label>
-                                    <input required type="number" name="age" value={formData.age} onChange={handleInputChange} min={4} max={60} title="Age must be between 4 and 60" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors" placeholder="Enter Age" />
-                                </div>
-                                <div className="space-y-2">
+                                <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Phone Number</label>
                                     <input required type="text" name="phone" value={formData.phone} onChange={handleInputChange} minLength={10} maxLength={10} pattern="[0-9]{10}" title="Please enter a valid digit mobile number" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors" placeholder="Mobile Number" />
                                 </div>
-                                <div className="space-y-2 col-span-2">
-                                    <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Select Program</label>
-                                    <select name="selectedCourse" value={formData.selectedCourse} onChange={handleInputChange} className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors appearance-none">
-                                        {courses.map(c => <option key={c.title} value={c.title}>{c.title}</option>)}
-                                    </select>
+                                <div className="space-y-2 md:col-span-2 hidden">
+                                    <input type="number" name="age" value={20} readOnly />
+                                    <textarea name="message" value="" readOnly></textarea>
                                 </div>
-                                <div className="space-y-2 col-span-2">
-                                    <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Any Message (Optional)</label>
-                                    <textarea name="message" value={formData.message} onChange={handleInputChange} rows="3" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors" placeholder="Tell us about your prior experience..."></textarea>
+                                <div className="space-y-2 md:col-span-2 mt-2">
+                                    <label className="text-xs uppercase tracking-widest text-brandRed font-bold">Selected Program</label>
+                                    <div className="w-full bg-zinc-950/50 border border-zinc-800 rounded-lg px-4 py-3 text-brandRed font-bold">
+                                        {formData.selectedCourse}
+                                    </div>
                                 </div>
                             </div>
 

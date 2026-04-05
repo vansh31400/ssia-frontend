@@ -71,6 +71,9 @@ export default function Analytics({ adminInfo }) {
         { name: 'Taekwondo', count: students.filter(s => s.sport === 'Taekwondo').length },
         { name: 'Kickboxing', count: students.filter(s => s.sport === 'Kickboxing').length },
         { name: 'Jeet Kune Do', count: students.filter(s => s.sport === 'Jeet Kune Do').length },
+        { name: 'MMA', count: students.filter(s => s.sport === 'MMA').length },
+        { name: 'Yoga', count: students.filter(s => s.sport === 'Yoga').length },
+        { name: 'Midbrain', count: students.filter(s => s.sport === 'Midbrain Activation').length },
     ];
 
     return (

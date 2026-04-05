@@ -75,6 +75,15 @@ export default function AdminDashboard() {
         } catch (err) { toast.error('Error deleting student'); }
     };
 
+    const deleteAdmission = async (id) => {
+        if (!window.confirm('Are you sure you want to delete this lead?')) return;
+        try {
+            await axios.delete(`https://ssia-e4sn.onrender.com/api/admissions/${id}`, config);
+            toast.success('Lead deleted successfully');
+            fetchAdmissions();
+        } catch (err) { toast.error('Error deleting lead'); }
+    };
+
     const handleLogout = () => {
         localStorage.removeItem('adminInfo');
         navigate('/admin');
@@ -228,7 +237,14 @@ export default function AdminDashboard() {
                                                 <td className="py-5 px-6 text-zinc-400">{item.age}</td>
                                                 <td className="py-5 px-6 font-mono text-zinc-300">{item.phone}</td>
                                                 <td className="py-5 px-6 text-zinc-400 max-w-[200px] truncate">{item.message || '-'}</td>
-                                                <td className="py-5 px-6 text-right text-zinc-500 text-sm whitespace-nowrap">{new Date(item.createdAt).toLocaleDateString()}</td>
+                                                <td className="py-5 px-6 text-right text-zinc-500 text-sm whitespace-nowrap">
+                                                    <div className="flex justify-end items-center gap-4">
+                                                        <span>{new Date(item.createdAt).toLocaleDateString()}</span>
+                                                        <button onClick={() => deleteAdmission(item._id)} className="p-1.5 hover:bg-brandRed text-zinc-500 hover:text-white rounded transition-colors" title="Delete Lead">
+                                                            <Trash2 className="w-4 h-4" />
+                                                        </button>
+                                                    </div>
+                                                </td>
                                             </>
                                         )}
                                     </tr>

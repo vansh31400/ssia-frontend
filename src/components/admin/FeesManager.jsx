@@ -150,7 +150,7 @@ export default function FeesManager({ adminInfo, students, fetchStudents }) {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-zinc-800/50">
-                                {feesHistory.map(fee => (
+                                {feesHistory.filter(fee => fee.studentId).map(fee => (
                                     <tr key={fee._id} className="hover:bg-zinc-800/30 transition-all">
                                         <td className="py-4 px-6">
                                             <p className="font-bold text-white max-w-[150px] truncate">{fee.studentId?.fullName || "Deleted Student"}</p>
