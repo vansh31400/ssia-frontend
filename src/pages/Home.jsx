@@ -21,7 +21,7 @@ const trainers = [
         role: 'Head Coach',
         features: ['Senior Black Belt', 'Expert in JEET KUNE DO &\nCombat Training'],
         exp: '15+ Yrs Experience',
-        img: 'public/images/manojsir.jpeg',
+        img: '/images/manojsir.jpeg',
         imgClass: 'object-top'
     },
     {
@@ -29,7 +29,7 @@ const trainers = [
         role: "Girls' Coach",
         features: ['Self Defence Specialist', 'Black Belt Instructor'],
         exp: '7+ Yrs Experience',
-        img: 'public/images/madam.jpeg',
+        img: '/images/madam.jpeg',
         imgClass: 'object-center'
     },
     {
@@ -37,7 +37,7 @@ const trainers = [
         role: 'Kids Coach',
         features: ['Specialized in Kids Martial\nArts Training', 'Fun & Discipline Focused'],
         exp: '5+ Yrs Experience',
-        img: 'public/images/kanhaiya.jpg',
+        img: '/images/kanhaiya.jpg',
         imgClass: 'object-center'
     }
 ];
