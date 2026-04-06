@@ -75,7 +75,7 @@ export default function IDCard({ student, onClose }) {
                     </div>
 
                     <div className="bg-zinc-900 text-white text-[9px] text-center p-2 mt-2 uppercase tracking-widest">
-                        If found, please return to: +91 74177 30440
+                        If found, please return to: +91 84334 22911
                     </div>
                 </div>
 

@@ -29,7 +29,7 @@ export default function Footer() {
                             <li><a href="#about" className="hover:text-brandRed transition-colors">About Us</a></li>
                             <li><a href="#courses" className="hover:text-brandRed transition-colors">Our Programs</a></li>
                             <li><a href="#trainers" className="hover:text-brandRed transition-colors">The Team</a></li>
-                            <li><a href="#contact" className="hover:text-brandRed transition-colors">Contact Us</a></li>
+                            <li><a href="tel:+918433422911" className="hover:text-brandRed transition-colors">Contact Us</a></li>
                         </ul>
                     </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-brandRed w-5 h-5 flex-shrink-0 mt-1" />
                                 <div>
-                                    <span>123 Main Street, Near City Square,<br />Muzaffarnagar, UP 251001</span>
+                                    <span>A2Z Colony, Sainik Vihar,<br />Muzaffarnagar, UP</span>
                                     <a
                                         href="https://goo.gl/maps/muzaffarnagar"
                                         target="_blank"
@@ -65,11 +65,11 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-brandRed w-5 h-5 flex-shrink-0" />
-                                <span>+91 74177 30440</span>
+                                <span>+91 84334 22911</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="text-brandRed w-5 h-5 flex-shrink-0" />
-                                <span>info@ssia.edu.in</span>
+                                <span>surydevmanoj1985@gmail.com</span>
                             </li>
                         </ul>
                     </div>

@@ -25,7 +25,7 @@ const trainers = [
         imgClass: 'object-top'
     },
     {
-        name: 'COACH ',
+        name: 'Rakhi Mam',
         role: "Girls' Coach",
         features: ['Self Defence Specialist', 'Black Belt Instructor'],
         exp: '7+ Yrs Experience',
@@ -56,10 +56,8 @@ const testimonials = [
 export default function Home() {
     const [formData, setFormData] = useState({
         name: '',
-        age: '',
         phone: '',
-        selectedCourse: 'Taekwondo',
-        message: ''
+        selectedCourse: 'Taekwondo'
     });
     const [loading, setLoading] = useState(false);
 
@@ -119,7 +117,7 @@ export default function Home() {
         try {
             await axios.post('https://ssia-e4sn.onrender.com/api/admissions', formData);
             toast.success('Form submitted successfully! We will contact you soon.');
-            setFormData({ name: '', age: '', phone: '', selectedCourse: 'Taekwondo', message: '' });
+            setFormData({ name: '', phone: '', selectedCourse: 'Taekwondo' });
         } catch (error) {
             toast.error('Failed to submit form. Please try again.');
         } finally {
@@ -148,7 +146,7 @@ export default function Home() {
                         <a href="#admission" className="bg-brandRed hover:bg-red-700 text-white px-10 py-4 rounded-sm font-bold transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(211,47,47,0.8)] focus:scale-95 smooth-render">
                             Start Training
                         </a>
-                        <a href="tel:+917417730440" className="bg-transparent border border-white/30 hover:bg-white hover:text-black hover:scale-105 text-white px-10 py-4 rounded-sm font-bold transition-all duration-500 backdrop-blur-sm flex items-center justify-center gap-2 smooth-render">
+                        <a href="tel:+918433422911" className="bg-transparent border border-white/30 hover:bg-white hover:text-black hover:scale-105 text-white px-10 py-4 rounded-sm font-bold transition-all duration-500 backdrop-blur-sm flex items-center justify-center gap-2 smooth-render">
                             <Phone className="w-5 h-5 animate-bounce" /> Contact Us
                         </a>
                     </div>
@@ -183,7 +181,7 @@ export default function Home() {
                             </div>
                             <div className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl text-center hover:border-brandRed transition-colors transform lg:translate-y-12">
                                 <Trophy className="w-12 h-12 text-brandRed mx-auto mb-4" />
-                                <h3 className="text-4xl font-black mb-2">250+</h3>
+                                <h3 className="text-4xl font-black mb-2">650+</h3>
                                 <p className="text-gray-400 uppercase tracking-wider text-sm">Medals Won</p>
                             </div>
                             <div className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl text-center hover:border-brandRed transition-colors">
@@ -525,10 +523,6 @@ export default function Home() {
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Phone Number</label>
                                     <input required type="text" name="phone" value={formData.phone} onChange={handleInputChange} minLength={10} maxLength={10} pattern="[0-9]{10}" title="Please enter a valid digit mobile number" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors" placeholder="Mobile Number" />
                                 </div>
-                                <div className="space-y-2 md:col-span-2 hidden">
-                                    <input type="number" name="age" value={20} readOnly />
-                                    <textarea name="message" value="" readOnly></textarea>
-                                </div>
                                 <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Select Program</label>
                                     <select name="selectedCourse" value={formData.selectedCourse} onChange={handleInputChange} className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandRed transition-colors appearance-none">
@@ -549,7 +543,7 @@ export default function Home() {
             <Footer />
 
             {/* Fixed WhatsApp Button (Option 6) */}
-            <a href="https://wa.me/917417730440" target="_blank" rel="noreferrer" className="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 transition-all hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] z-50 flex items-center justify-center animate-bounce-slight group">
+            <a href="https://wa.me/918433422911" target="_blank" rel="noreferrer" className="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 transition-all hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] z-50 flex items-center justify-center animate-bounce-slight group">
                 <span className="w-3 h-3 bg-red-500 rounded-full absolute top-0 right-0 animate-ping"></span>
                 <span className="w-3 h-3 bg-red-500 rounded-full absolute top-0 right-0"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">

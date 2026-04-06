@@ -10,6 +10,7 @@ export default function Navbar() {
         { name: 'Courses', href: '#courses' },
         { name: 'Trainers', href: '#trainers' },
         { name: 'Gallery', href: '#gallery' },
+        { name: 'Contact Us', href: 'tel:+918433422911' },
     ];
 
     return (
@@ -17,13 +18,27 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
-                        <a href="#" className="flex items-center gap-2 font-black text-lg xl:text-xl uppercase tracking-wider text-white hidden lg:flex drop-shadow-md">
-                            <img src="/images/logo.png" alt="SSIA Logo" className="h-10 w-auto bg-white rounded-md" />
-                            <span>SHREE SURYADEV INTERNATIONAL <span className="text-brandRed">ACADEMY</span></span>
+                        <a href="#" className="flex items-center gap-3 hidden lg:flex drop-shadow-md">
+                            <img src="/images/logo.png" alt="SSIA Logo" className="h-12 w-auto bg-white rounded-md p-1" />
+                            <div className="flex flex-col">
+                                <span className="font-black text-lg xl:text-xl uppercase tracking-wider text-white leading-tight">
+                                    SHREE SURYADEV INTERNATIONAL <span className="text-brandRed">ACADEMY</span>
+                                </span>
+                                <span className="text-[10px] xl:text-xs text-gray-400 uppercase tracking-widest font-bold mt-0.5">
+                                    Affliated to Kickboxing Association Muzaffarnagar
+                                </span>
+                            </div>
                         </a>
-                        <a href="#" className="flex items-center gap-2 font-black text-3xl tracking-tighter text-white lg:hidden">
-                            <img src="/images/logo.png" alt="SSIA Logo" className="h-8 w-auto bg-white rounded-md" />
-                            <span>SSIA<span className="text-brandRed">.</span></span>
+                        <a href="#" className="flex items-center gap-2 lg:hidden">
+                            <img src="/images/logo.png" alt="SSIA Logo" className="h-10 w-auto bg-white rounded-md p-1" />
+                            <div className="flex flex-col justify-center">
+                                <span className="font-black text-2xl tracking-tighter text-white leading-none">
+                                    SSIA<span className="text-brandRed">.</span>
+                                </span>
+                                <span className="text-[8px] text-gray-400 uppercase tracking-widest font-bold mt-0.5">
+                                    Kickboxing Boxing Assoc.
+                                </span>
+                            </div>
                         </a>
                     </div>
 

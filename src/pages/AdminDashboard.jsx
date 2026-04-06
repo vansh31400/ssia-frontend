@@ -75,14 +75,6 @@ export default function AdminDashboard() {
         } catch (err) { toast.error('Error deleting student'); }
     };
 
-    const deleteAdmission = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this lead?')) return;
-        try {
-            await axios.delete(`https://ssia-e4sn.onrender.com/api/admissions/${id}`, config);
-            toast.success('Lead deleted successfully');
-            fetchAdmissions();
-        } catch (err) { toast.error('Error deleting lead'); }
-    };
 
     const handleLogout = () => {
         localStorage.removeItem('adminInfo');
@@ -90,8 +82,20 @@ export default function AdminDashboard() {
     };
 
     const filteredData = activeTab === 'students'
-        ? students.filter(s => s.fullName.toLowerCase().includes(search.toLowerCase()) || s.studentId.toLowerCase().includes(search.toLowerCase()) || s.sport.toLowerCase().includes(search.toLowerCase()))
-        : admissions.filter(a => a.name.toLowerCase().includes(search.toLowerCase()) || a.selectedCourse.toLowerCase().includes(search.toLowerCase()));
+        ? students.filter(s => s.fullName?.toLowerCase().includes(search.toLowerCase()) || s.studentId?.toLowerCase().includes(search.toLowerCase()) || s.sport?.toLowerCase().includes(search.toLowerCase()))
+        : admissions.filter(a => a.name?.toLowerCase().includes(search.toLowerCase()) || a.selectedCourse?.toLowerCase().includes(search.toLowerCase()));
+
+    const deleteAdmission = async (id) => {
+        if (!window.confirm('Are you sure you want to delete this lead?')) return;
+        try {
+            await axios.delete(`https://ssia-e4sn.onrender.com/api/admissions/${id}`, config);
+            toast.success('Lead deleted successfully');
+            fetchAdmissions();
+        } catch (err) {
+            console.error('Delete lead error:', err.response?.data || err.message);
+            toast.error(`Error deleting lead: ${err.response?.data?.message || err.message}`);
+        }
+    };
 
     return (
         <div className="bg-brandDark min-h-screen p-4 md:p-8">
