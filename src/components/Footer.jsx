@@ -52,7 +52,7 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-brandRed w-5 h-5 flex-shrink-0 mt-1" />
                                 <div>
-                                    <span>A2Z Colony, Sainik Vihar,<br />Muzaffarnagar, UP</span>
+                                    <span>A2Z Colony, radha Vihar,<br />Muzaffarnagar, UP</span>
                                     <a
                                         href="https://goo.gl/maps/muzaffarnagar"
                                         target="_blank"
