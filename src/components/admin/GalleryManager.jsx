@@ -192,7 +192,7 @@ export default function GalleryManager() {
                         <div key={img._id} className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden group">
                             <div className="h-48 overflow-hidden relative flex items-center justify-center bg-zinc-950">
                                 {/* Local server serves from /uploads, thus HTTP is needed if relative path, prepended by the base url */}
-                                <img src={`https://ssia-e4sn.onrender.com${img.imageUrl}`} alt="HoF" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                                <img src={img.imageUrl.startsWith('data:') || img.imageUrl.startsWith('http') ? img.imageUrl : `https://ssia-e4sn.onrender.com${img.imageUrl}`} alt="HoF" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                                 <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                     {index > 0 && <button onClick={() => handleMove(img._id, 'up')} className="bg-zinc-800 hover:bg-zinc-600 text-white p-1 rounded-md shadow-lg"><ArrowUp className="w-4 h-4" /></button>}
                                     {index < hallOfFameImages.length - 1 && <button onClick={() => handleMove(img._id, 'down')} className="bg-zinc-800 hover:bg-zinc-600 text-white p-1 rounded-md shadow-lg"><ArrowDown className="w-4 h-4" /></button>}
@@ -229,7 +229,7 @@ export default function GalleryManager() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {generalImages.map((img, index) => (
                         <div key={img._id} className="relative group overflow-hidden rounded-xl aspect-square bg-zinc-950 border border-zinc-800 flex items-center justify-center">
-                            <img src={`https://ssia-e4sn.onrender.com${img.imageUrl}`} alt="Gallery" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                            <img src={img.imageUrl.startsWith('data:') || img.imageUrl.startsWith('http') ? img.imageUrl : `https://ssia-e4sn.onrender.com${img.imageUrl}`} alt="Gallery" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                             <div className="absolute top-2 left-2 flex gap-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
                                 {index > 0 && <button onClick={() => handleMove(img._id, 'up')} className="bg-zinc-800 hover:bg-zinc-600 text-white p-1.5 rounded-full shadow-lg"><ArrowUp className="w-4 h-4" /></button>}
                                 {index < generalImages.length - 1 && <button onClick={() => handleMove(img._id, 'down')} className="bg-zinc-800 hover:bg-zinc-600 text-white p-1.5 rounded-full shadow-lg"><ArrowDown className="w-4 h-4" /></button>}

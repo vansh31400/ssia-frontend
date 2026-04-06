@@ -73,10 +73,11 @@ export default function Home() {
         const fetchGallery = async () => {
             try {
                 const { data } = await axios.get('https://ssia-e4sn.onrender.com/api/gallery');
-                setGallery(data.filter(img => img.type === 'General').map(img => `https://ssia-e4sn.onrender.com${img.imageUrl}`));
+                const getFullUrl = (url) => url.startsWith('data:') || url.startsWith('http') ? url : `https://ssia-e4sn.onrender.com${url}`;
+                setGallery(data.filter(img => img.type === 'General').map(img => getFullUrl(img.imageUrl)));
                 setHallOfFame(data.filter(img => img.type === 'HallOfFame').map(img => ({
                     ...img,
-                    img: `https://ssia-e4sn.onrender.com${img.imageUrl}`
+                    img: getFullUrl(img.imageUrl)
                 })));
             } catch (error) {
                 console.error('Failed to load dynamic gallery data. Make sure backend is running.');
