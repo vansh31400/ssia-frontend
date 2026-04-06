@@ -36,7 +36,7 @@ export default function Navbar() {
                                     SSIA<span className="text-brandRed">.</span>
                                 </span>
                                 <span className="text-[8px] text-gray-400 uppercase tracking-widest font-bold mt-0.5">
-                                    Kickboxing Boxing Assoc.
+                                    Affliated to Kickboxing Association Muzaffarnagar
                                 </span>
                             </div>
                         </a>
